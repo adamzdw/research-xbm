@@ -3,4 +3,4 @@ numpy
 yacs
 setuptools==40.6.2
 Pillow
-torchvision==0.4.2
+torchvision

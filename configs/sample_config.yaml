@@ -5,17 +5,17 @@
 #
 # This source code is licensed under the LICENSE file in the root directory of this source tree.
 
-NAME: contrastive
+NAME: ms_loss_bninception
 
 MODEL:
   BACKBONE:
-    NAME: resnet50
+    NAME: bninception
   HEAD:
-    DIM: 128
-    IN_CHANNELS: 2048
+    DIM: 512
+    IN_CHANNELS: 1024
 
 LOSSES:
-  NAME: 'contrastive_loss'
+  NAME: 'ms_loss'
 
 INPUT:
   MODE: RGB
@@ -24,25 +24,25 @@ INPUT:
 
 
 SOLVER:
-  MAX_ITERS: 35000
+  MAX_ITERS: 3000 #35000
   STEPS: 2
   OPTIMIZER_NAME: Adam
   BASE_LR: 0.0001 
   WEIGHT_DECAY: 0.0005
   
 DATA:
-  TRAIN_IMG_SOURCE: path for train.txt 
-  TEST_IMG_SOURCE: path for test.txt
-  TRAIN_BATCHSIZE: 64
+  TRAIN_IMG_SOURCE: datasets/train.txt 
+  TEST_IMG_SOURCE: datasets/test.txt
+  TRAIN_BATCHSIZE: 64 #64
   TEST_BATCHSIZE: 256
   NUM_WORKERS: 16
   NUM_INSTANCES: 4
 
 VALIDATION:
-  VERBOSE: 1000
+  VERBOSE: 100 #1000
 
 XBM:
-  ENABLE: True
+  ENABLE: True #True
   WEIGHT: 1.0
   SIZE: 55000
-  START_ITERATION: 1000
+  START_ITERATION: 100 #1000

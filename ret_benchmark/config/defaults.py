@@ -20,7 +20,7 @@ _C.MODEL = CN()
 _C.MODEL.DEVICE = "cuda"
 
 _C.MODEL.BACKBONE = CN()
-_C.MODEL.BACKBONE.NAME = "resnet50"
+_C.MODEL.BACKBONE.NAME = "googlenet"
 _C.MODEL.BACKBONE.LAST_STRIDE = 2
 
 _C.MODEL.PRETRAIN = "imagenet"  #'imagenet'
@@ -68,7 +68,7 @@ _C.DATA.TRAIN_BATCHSIZE = 70
 _C.DATA.TEST_BATCHSIZE = 256
 _C.DATA.NUM_WORKERS = 8
 _C.DATA.NUM_INSTANCES = 5
-_C.DATA.SAMPLE = "RandomIdentitySampler"
+_C.DATA.SAMPLE = "RandomIdentitySampler" #RandomIdentitySampler
 
 # Input option
 _C.INPUT = CN()
